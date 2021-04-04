@@ -26,9 +26,9 @@ class _RecentChatsState extends State<RecentChats> {
             topRight: Radius.circular(30.0),
           ),
           child: ListView.builder(
-            itemCount: chats.length,
+            itemCount: messages.length,
             itemBuilder: (BuildContext context, int index) {
-              final Message chat = chats[index];
+              final Message chat = messages[index];
               return GestureDetector(
                 onTap: () => Navigator.push(
                     context,

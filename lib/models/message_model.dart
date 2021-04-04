@@ -49,7 +49,7 @@ final User sam = User(
 
 List<User> favorites = [sam, olivia, john, greg, james];
 
-List<Message> chats = [
+List<Message> messages = [
   Message(
     sender: james,
     time: '5:30 PM',
