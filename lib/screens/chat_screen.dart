@@ -14,10 +14,49 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
 
   _buildMessage(Message message, bool isMe) {
-    return Container(
-      child: Text(
-        message.text,
-      ),
+    return Row(
+      children: [
+        Container(
+          margin: isMe
+              ? EdgeInsets.only(top: 8.0, bottom: 8.0, left: 80.0)
+              : EdgeInsets.only(top: 8.0, bottom: 8.0),
+          decoration: BoxDecoration(
+            color: isMe ? Theme.of(context).accentColor : Color(0xFFFFEFEE),
+            borderRadius: isMe
+                ? BorderRadius.only(topLeft: Radius.circular(15.0), bottomLeft: Radius.circular(15.0))
+                : BorderRadius.only(topRight: Radius.circular(15.0), bottomRight: Radius.circular(15.0)),
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
+          width: MediaQuery.of(context).size.width * 0.75,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                message.time,
+                style: TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600
+                )
+              ),
+              Text(
+                message.text,
+                style: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              ],
+            ),
+        ),
+        IconButton(
+          icon: message.liked ? Icon(Icons.favorite) : Icon(Icons.favorite_border),
+          iconSize: 30.0,
+          color: Colors.red,
+          onPressed: () {},
+        ),
+      ],
     );
   }
 
@@ -26,6 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
+        // automaticallyImplyLeading: false,
         title: Text(
           widget.user.name,
           style: TextStyle(
@@ -40,7 +80,7 @@ class _ChatScreenState extends State<ChatScreen> {
             iconSize: 30.0,
             color: Colors.white,
             onPressed: () {},
-          )
+          ),
         ],
       ),
       body: Column(

@@ -8,6 +8,7 @@ class RecentChats extends StatefulWidget {
 }
 
 class _RecentChatsState extends State<RecentChats> {
+  
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -26,9 +27,9 @@ class _RecentChatsState extends State<RecentChats> {
             topRight: Radius.circular(30.0),
           ),
           child: ListView.builder(
-            itemCount: messages.length,
+            itemCount: chats.length,
             itemBuilder: (BuildContext context, int index) {
-              final Message chat = messages[index];
+              final Message chat = chats[index];
               return GestureDetector(
                 onTap: () => Navigator.push(
                     context,
