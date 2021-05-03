@@ -1,11 +1,15 @@
 import 'package:sample_chat_demo/models/user_model.dart';
 
 class Message {
-  final User sender;
-  final String text;
-  final String time;
-  final bool liked;
-  final bool unread;
+  User sender;
+  String text;
+  String time;
+  bool liked;
+  bool unread;
+
+  setLiked(bool liked) {
+    this.liked = liked;
+  }
 
   Message({this.sender, this.text, this.time, this.liked, this.unread});
 
@@ -104,7 +108,7 @@ List<Message> messages = [
   ),
   Message(
     sender: currentUser,
-    time: '4:24 PM',
+    time: '5:34 PM',
     text: 'Learning swimming, Can you swimming?',
     liked: false,
     unread: false,
