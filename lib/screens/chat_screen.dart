@@ -72,7 +72,7 @@ class _ChatScreenState extends State<ChatScreen> {
   _buildMessageComposer() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 8.0),
-      height: 70.0,
+      height: 80.0,
       color: Colors.white,
       child: Row(
         children: <Widget>[
@@ -82,13 +82,13 @@ class _ChatScreenState extends State<ChatScreen> {
               color: Theme.of(context).primaryColor,
               onPressed: () {}),
           Expanded(
-              child: TextField(
-                textCapitalization: TextCapitalization.sentences,
-                onChanged: (value) {},
-                decoration: InputDecoration.collapsed(
-                  hintText: 'Send a message...',
-                ),
-              )),
+            child: TextField(
+              textCapitalization: TextCapitalization.sentences,
+              onChanged: (value) {},
+              decoration: InputDecoration.collapsed(
+                  hintText: 'Send a message...'
+              ),
+            ),),
           IconButton(
               icon: Icon(Icons.send),
               iconSize: 25.0,

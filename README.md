@@ -1,8 +1,10 @@
 # sample_chat_demo
-
-A new Flutter project.
-
+A new Simple Chat demo By learning Flutter.
+一个学习Flutter的chat demo
 ## Getting Started
+
+1. 打开Android Studio，准备iOS模拟器或Android模拟器
+2. 运行demo
 
 This project is a starting point for a Flutter application.
 
